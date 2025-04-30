@@ -78,29 +78,35 @@ public class HomeWindow {
 	}
 	
 	private void initializeUpdate() {
-		this.updateButton.setOnAction(event -> {
-			GroceryItem selectedItem = this.groceryItemList.getSelectionModel().getSelectedItem();
-			if (selectedItem != null) {
-				try {
-					FXMLLoader loader = new FXMLLoader(getClass().getResource("/edu/westga/comp4420/lab02/view/codebehind/GroceryItemInfoWindow.fxml"));
-					Parent root = loader.load();
-					GroceryItemInfoWindow groceryItemInfoWindow = loader.getController();
-					groceryItemInfoWindow.populateFields(selectedItem);
-					Stage stage = new Stage();
-					stage.setTitle("Update Item");
-					stage.setScene(new Scene(root));
-					stage.show();
-					stage.setOnHiding(e -> this.refreshGroceryItemList());
-					this.refreshGroceryItemList();
-				} catch (Exception e) {
-					e.printStackTrace();
-					this.showError("Error opening Grocery Item Information Window");
-				}
-			} else {
-				this.showError("Please select a Grocery Item to update");
+	this.updateButton.setOnAction(event -> {
+		GroceryItem selectedItem = this.groceryItemList.getSelectionModel().getSelectedItem();
+		if (selectedItem != null) {
+			try {
+				FXMLLoader loader = new FXMLLoader(getClass().getResource("/edu/westga/comp4420/lab02/view/codebehind/GroceryItemInfoWindow.fxml"));
+				Parent root = loader.load();
+				
+				GroceryItemInfoWindow groceryItemInfoWindow = loader.getController();
+
+				// ✅ Set reference to this HomeWindow
+				groceryItemInfoWindow.setHomeWindow(this);
+
+				// ✅ Set the fields to update the item
+				groceryItemInfoWindow.populateFields(selectedItem);
+
+				Stage stage = new Stage();
+				stage.setTitle("Update Item");
+				stage.setScene(new Scene(root));
+				stage.show();
+				stage.setOnHiding(e -> this.refreshGroceryItemList());
+			} catch (Exception e) {
+				e.printStackTrace();
+				this.showError("Error opening Grocery Item Information Window");
 			}
-		});
-	}
+		} else {
+			this.showError("Please select a Grocery Item to update");
+		}
+	});
+}
 	
 	public void refreshGroceryItemList() {
 		this.groceryItemList.getItems().clear();
@@ -114,4 +120,9 @@ public class HomeWindow {
 		alert.setContentText(message);
 		alert.showAndWait();
 	}
+	
+	public void removeItem(GroceryItem item) {
+		this.groceryItemManager.remove(item);
+	}
+
 }
