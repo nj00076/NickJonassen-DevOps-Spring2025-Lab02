@@ -1,0 +1,8 @@
+edu\westga\comp4420\lab01\test\model\course\TestAddCourse.class
+edu\westga\comp4420\lab01\test\model\course\TestCourseGettersSetters.class
+edu\westga\comp4420\lab01\test\model\course\TestSemesterManager.class
+edu\westga\comp4420\lab01\test\model\course\TestToString.class
+edu\westga\comp4420\lab01\test\model\course\TestHashCode.class
+edu\westga\comp4420\lab01\test\model\course\TestEqualObject.class
+edu\westga\comp4420\lab01\test\model\course\TestCourseManagerGetters.class
+edu\westga\comp4420\lab01\test\model\course\TestCourseManager.class
