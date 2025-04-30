@@ -56,8 +56,8 @@ public class GroceryItemInfoWindow {
 			this.showError("Course number must be an integer.");
 			return;
 		}
-		if (item == null || this.numberText.getText().isEmpty() ) {
-			this.showError("Prefix, Number are required fields.");
+		if (this.groceryItemText.getText().isEmpty() || this.numberText.getText().isEmpty() ) {
+			this.showError("Item Name and Quantity are required fields.");
 			return;
 		}
 		GroceryItem groceryItem = new GroceryItem(item, number);
