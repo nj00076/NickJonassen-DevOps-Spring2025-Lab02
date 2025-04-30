@@ -44,7 +44,7 @@ public class GroceryItemInfoWindow {
 	public void populateFields(GroceryItem groceryItem) {
 		this.selectedItem = groceryItem;
 		this.groceryItemText.setText(groceryItem.getItem());
-	//	this.numberText.setText(String.valueOf(course.getNumber()));
+		this.numberText.setText(String.valueOf(groceryItem.getNumber()));
 	}
 	
 	private void saveCourse() {
@@ -60,7 +60,7 @@ public class GroceryItemInfoWindow {
 			this.showError("Prefix, Number are required fields.");
 			return;
 		}
-		GroceryItem groceryItem = new GroceryItem(item); // add number
+		GroceryItem groceryItem = new GroceryItem(item, number);
 		if (this.selectedItem == null) {
 			if (this.groceryItemManager.addItem(groceryItem)) {
 				this.closeWindow();
