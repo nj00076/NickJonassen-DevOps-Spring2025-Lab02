@@ -1,7 +1,5 @@
-edu\westga\comp4420\lab01\view\codebehind\HomeWindow.class
-edu\westga\comp4420\lab01\model\Course.class
-edu\westga\comp4420\lab01\model\SemesterManager.class
-edu\westga\comp4420\lab01\model\DepartmentManager.class
-edu\westga\comp4420\lab01\model\CourseManager.class
-edu\westga\comp4420\lab01\view\codebehind\CourseInfoWindow.class
-edu\westga\comp4420\lab01\Main.class
+edu\westga\comp4420\lab02\model\GroceryItemManager.class
+edu\westga\comp4420\lab02\view\codebehind\HomeWindow.class
+edu\westga\comp4420\lab02\Main.class
+edu\westga\comp4420\lab02\view\codebehind\GroceryItemInfoWindow.class
+edu\westga\comp4420\lab02\model\GroceryItem.class
