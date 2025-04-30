@@ -1,6 +1,6 @@
 package edu.westga.comp4420.lab02.model;
 
-import java.util.Objects;
+// import java.util.Objects;
 
 public class GroceryItem {
     private String item;
@@ -35,8 +35,8 @@ public class GroceryItem {
   //      return Objects.hash(this.prefix, this.number, this.semester);
   //  }
 
-   // @Override
-  //  public String toString() {
-  //      return this.prefix + " " + this.number + " - " + this.semester;
-  //  }
+    @Override
+    public String toString() {
+        return this.item; //+ " " + this.number + " - " + this.semester;
+    }
 }

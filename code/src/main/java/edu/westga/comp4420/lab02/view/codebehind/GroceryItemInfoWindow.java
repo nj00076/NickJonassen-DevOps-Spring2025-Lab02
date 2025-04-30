@@ -3,7 +3,6 @@ package edu.westga.comp4420.lab02.view.codebehind;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.control.ListView;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 import edu.westga.comp4420.lab02.model.GroceryItem;
@@ -24,11 +23,11 @@ public class GroceryItemInfoWindow {
 	private TextField groceryItemText;
 
 	private GroceryItemManager groceryItemManager;
-	private GroceryItem groceryItem;
+	private GroceryItem selectedItem;
 	private HomeWindow homeWindow;
 
 	public GroceryItemInfoWindow() {
-		this.groceryItem = new GroceryItem("");
+		this.groceryItemManager = new GroceryItemManager();
 	}
 	
 	public void setHomeWindow(HomeWindow homeWindow) {
@@ -43,7 +42,7 @@ public class GroceryItemInfoWindow {
 	
 	
 	public void populateFields(GroceryItem groceryItem) {
-		this.groceryItem = groceryItem;
+		this.selectedItem = groceryItem;
 		this.groceryItemText.setText(groceryItem.getItem());
 	//	this.numberText.setText(String.valueOf(course.getNumber()));
 	}
@@ -57,12 +56,12 @@ public class GroceryItemInfoWindow {
 			this.showError("Course number must be an integer.");
 			return;
 		}
-	//	if (prefix == null || this.numberText.getText().isEmpty() ) {
-	//		this.showError("Prefix, Number, and Semester are required fields.");
-	//		return;
-	//	}
+		if (item == null || this.numberText.getText().isEmpty() ) {
+			this.showError("Prefix, Number are required fields.");
+			return;
+		}
 		GroceryItem groceryItem = new GroceryItem(item); // add number
-		if (this.groceryItem == null) {
+		if (this.selectedItem == null) {
 			if (this.groceryItemManager.addItem(groceryItem)) {
 				this.closeWindow();
 				this.homeWindow.setGroceryItemManager(groceryItem);
