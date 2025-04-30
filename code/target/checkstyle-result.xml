@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="9.3">
+<file name="C:\Users\nj00076\Desktop\4220JonassenLab02\NickJonassen-DevOps-Spring2025-Lab02\code\src\main\java\edu\westga\comp4420\lab02\Main.java">
+</file>
+<file name="C:\Users\nj00076\Desktop\4220JonassenLab02\NickJonassen-DevOps-Spring2025-Lab02\code\src\main\java\edu\westga\comp4420\lab02\model\GroceryItem.java">
+<error line="3" column="8" severity="error" message="Unused import - java.util.Objects." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+</file>
+<file name="C:\Users\nj00076\Desktop\4220JonassenLab02\NickJonassen-DevOps-Spring2025-Lab02\code\src\main\java\edu\westga\comp4420\lab02\model\GroceryItemManager.java">
+</file>
+<file name="C:\Users\nj00076\Desktop\4220JonassenLab02\NickJonassen-DevOps-Spring2025-Lab02\code\src\main\java\edu\westga\comp4420\lab02\view\codebehind\GroceryItemInfoWindow.java">
+<error line="6" column="8" severity="error" message="Unused import - javafx.scene.control.ListView." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+<error line="64" column="58" severity="error" message="Don&apos;t use trailing comments." source="com.puppycrawl.tools.checkstyle.checks.TrailingCommentCheck"/>
+</file>
+<file name="C:\Users\nj00076\Desktop\4220JonassenLab02\NickJonassen-DevOps-Spring2025-Lab02\code\src\main\java\edu\westga\comp4420\lab02\view\codebehind\HomeWindow.java">
+</file>
+</checkstyle>

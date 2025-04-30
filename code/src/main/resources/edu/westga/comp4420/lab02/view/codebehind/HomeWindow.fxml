@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane minHeight="99.0" minWidth="160.0" prefHeight="366.0" prefWidth="498.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.westga.comp4420.lab01.view.codebehind.HomeWindow">
+<AnchorPane minHeight="99.0" minWidth="160.0" prefHeight="366.0" prefWidth="498.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.westga.comp4420.lab02.view.codebehind.HomeWindow">
    <children>
       <Label fx:id="mainLabel" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="190.0" layoutY="24.0" prefHeight="17.0" prefWidth="118.0" text="Home">
          <font>
