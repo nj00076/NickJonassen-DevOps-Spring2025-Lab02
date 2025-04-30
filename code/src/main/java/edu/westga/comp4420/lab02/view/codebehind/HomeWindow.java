@@ -18,6 +18,9 @@ public class HomeWindow {
 	private Button addButton;
 	
 	@FXML
+	private Button removeButton;
+	
+	@FXML
 	private Button updateButton;
 	
 	@FXML
@@ -28,7 +31,7 @@ public class HomeWindow {
 	public HomeWindow() {
 		this.groceryItemManager = new GroceryItemManager();
 	}
-	
+
 	
 	public void setGroceryItemManager(GroceryItem groceryItem) {
 		this.groceryItemManager.addItem(groceryItem);
@@ -54,6 +57,24 @@ public class HomeWindow {
 			}
 		});
 		this.initializeUpdate();
+		this.initializeRemove();
+	}
+	
+	private void initializeRemove() {
+		this.removeButton.setOnAction(event -> {
+			GroceryItem selectedItem = this.groceryItemList.getSelectionModel().getSelectedItem();
+			if (selectedItem != null) {
+				try {
+					this.groceryItemManager.remove(selectedItem);
+					this.refreshGroceryItemList();
+				} catch (Exception e) {
+					e.printStackTrace();
+					this.showError("Error opening Grocery Item Information Window");
+				}
+			} else {
+				this.showError("Please select a Grocery Item to remove");
+			}
+		});
 	}
 	
 	private void initializeUpdate() {

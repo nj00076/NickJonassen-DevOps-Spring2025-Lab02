@@ -21,5 +21,9 @@ public class GroceryItemManager {
     public List<GroceryItem> getGroceryItems() {
         return this.items;
     }
+	
+	public boolean remove(GroceryItem item) {
+		return this.items.remove(item);
+	}
 
 }
