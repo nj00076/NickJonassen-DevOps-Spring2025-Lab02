@@ -28,23 +28,6 @@ public class GroceryItem {
         this.number = number;
     }
 
-  //  @Override
-  //  public boolean equals(Object obj) {
-  //      if (this == obj) {
-	//		return true;
-//		}
-  //      if (obj == null || getClass() != obj.getClass()) {
-	//		return false;
-	//	}
-  //      Course course = (Course) obj;
-  //      return this.number == course.number && this.prefix.equals(course.prefix) && this.semester.equals(course.semester);
-  //  }
-
-  //  @Override
-  //  public int hashCode() {
-  //      return Objects.hash(this.prefix, this.number, this.semester);
-  //  }
-
     @Override
     public String toString() {
         return "Item name - " + this.item + " / Quantity of Item - " + String.valueOf(this.number);

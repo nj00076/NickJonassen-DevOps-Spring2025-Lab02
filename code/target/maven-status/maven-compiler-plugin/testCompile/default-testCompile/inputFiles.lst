@@ -1,6 +1,5 @@
 C:\Users\nj00076\Desktop\4220JonassenLab02\NickJonassen-DevOps-Spring2025-Lab02\code\src\test\java\edu\westga\comp4420\lab02\test\model\grocery_Item\TestGettersAndSetters.java
-C:\Users\nj00076\Desktop\4220JonassenLab02\NickJonassen-DevOps-Spring2025-Lab02\code\src\test\java\edu\westga\comp4420\lab02\test\model\grocery_item_manager\TestAddCourse.java
+C:\Users\nj00076\Desktop\4220JonassenLab02\NickJonassen-DevOps-Spring2025-Lab02\code\src\test\java\edu\westga\comp4420\lab02\test\model\grocery_item_manager\TestRemoveGroceryItem.java
 C:\Users\nj00076\Desktop\4220JonassenLab02\NickJonassen-DevOps-Spring2025-Lab02\code\src\test\java\edu\westga\comp4420\lab02\test\model\grocery_Item\TestToString.java
-C:\Users\nj00076\Desktop\4220JonassenLab02\NickJonassen-DevOps-Spring2025-Lab02\code\src\test\java\edu\westga\comp4420\lab02\test\model\grocery_Item\TestHashCode.java
-C:\Users\nj00076\Desktop\4220JonassenLab02\NickJonassen-DevOps-Spring2025-Lab02\code\src\test\java\edu\westga\comp4420\lab02\test\model\grocery_Item\TestEqualObject.java
-C:\Users\nj00076\Desktop\4220JonassenLab02\NickJonassen-DevOps-Spring2025-Lab02\code\src\test\java\edu\westga\comp4420\lab02\test\model\grocery_item_manager\TestCourseManagerGetters.java
+C:\Users\nj00076\Desktop\4220JonassenLab02\NickJonassen-DevOps-Spring2025-Lab02\code\src\test\java\edu\westga\comp4420\lab02\test\model\grocery_item_manager\TestAddGroceryItem.java
+C:\Users\nj00076\Desktop\4220JonassenLab02\NickJonassen-DevOps-Spring2025-Lab02\code\src\test\java\edu\westga\comp4420\lab02\test\model\grocery_item_manager\TestGroceryItemManagerGetters.java

@@ -9,18 +9,18 @@ class TestGroceryItemGettersSetters {
 
     @Test
     void testGetSetPrefix() {
-        GroceryItem item = new GroceryItem("Bannanna");
+        GroceryItem item = new GroceryItem("Bannanna", 2);
         assertEquals("Bannanna", item.getItem(), "Prefix should be 'Bannanna'");
         item.setItem("Orange");
         assertEquals("Orange", item.getItem(), "Prefix should be updated to 'Orange'");
     }
 
- //   @Test
-  //  void testGetSetNumber() {
- //      Course course = new Course("CS", 999, "Fall", "");
- //       assertEquals(999, course.getNumber(), "Number should be 999");
- //       course.setNumber(1001);
- //       assertEquals(1001, course.getNumber(), "Number should be updated to 1001");
- //   }
+    @Test
+    void testGetSetNumber() {
+        GroceryItem item = new GroceryItem("Bannanna", 999);
+        assertEquals(999, item.getNumber(), "Number should be 999");
+        item.setNumber(1001);
+        assertEquals(1001, item.getNumber(), "Number should be updated to 1001");
+    }
 
 }

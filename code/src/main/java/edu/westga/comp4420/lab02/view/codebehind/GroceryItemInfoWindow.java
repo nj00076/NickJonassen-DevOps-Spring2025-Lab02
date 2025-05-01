@@ -6,7 +6,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 import edu.westga.comp4420.lab02.model.GroceryItem;
-import edu.westga.comp4420.lab02.model.GroceryItemManager;
 
 public class GroceryItemInfoWindow {
     
@@ -24,10 +23,6 @@ public class GroceryItemInfoWindow {
 
     private GroceryItem selectedItem;
     private HomeWindow homeWindow;
-
-    public GroceryItemInfoWindow() {
-        // Removed local groceryItemManager
-    }
 
     public void setHomeWindow(HomeWindow homeWindow) {
         this.homeWindow = homeWindow;
@@ -54,23 +49,18 @@ public class GroceryItemInfoWindow {
             this.showError("Course number must be an integer.");
             return;
         }
-
         if (item.isEmpty() || this.numberText.getText().isEmpty()) {
             this.showError("Item Name and Quantity are required fields.");
             return;
         }
-
         GroceryItem groceryItem = new GroceryItem(item, number);
 
         if (this.selectedItem == null) {
-            // Add new item
             this.homeWindow.setGroceryItemManager(groceryItem);
         } else {
-            // Update logic: remove old, add new
             this.homeWindow.removeItem(this.selectedItem);
             this.homeWindow.setGroceryItemManager(groceryItem);
         }
-
         this.closeWindow();
         this.notifyHomeWindow();
     }

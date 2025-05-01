@@ -7,10 +7,10 @@ import edu.westga.comp4420.lab02.model.GroceryItem;
 
 class TestToString {
 
-//    @Test
-//    void testToStringNormal() {
-//        Course course = new Course("Math", 101, "Spring", "");
-//        String expected = "Math 101 - Spring";
-//        assertEquals(expected, course.toString(), "toString() should return the correct string representation");
-//    }
+    @Test
+    void testToStringNormal() {
+        GroceryItem item = new GroceryItem("Bannanna", 999);;
+        String expected = "Item name - Bannanna / Quantity of Item - 999";
+        assertEquals(expected, item.toString(), "toString() should return the correct string representation");
+    }
 }

@@ -1,98 +1,87 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>GroceryItemInfoWindow.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">High-Low-Game</a> &gt; <a href="index.source.html" class="el_package">edu.westga.comp4420.lab02.view.codebehind</a> &gt; <span class="el_source">GroceryItemInfoWindow.java</span></div><h1>GroceryItemInfoWindow.java</h1><pre class="source lang-java linenums">package edu.westga.comp4420.lab02.view.codebehind;
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>GroceryItemInfoWindow.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GroceryListManager</a> &gt; <a href="index.source.html" class="el_package">edu.westga.comp4420.lab02.view.codebehind</a> &gt; <span class="el_source">GroceryItemInfoWindow.java</span></div><h1>GroceryItemInfoWindow.java</h1><pre class="source lang-java linenums">package edu.westga.comp4420.lab02.view.codebehind;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.control.ListView;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 import edu.westga.comp4420.lab02.model.GroceryItem;
-import edu.westga.comp4420.lab02.model.GroceryItemManager;
 
-public class GroceryItemInfoWindow {
-	
-	@FXML
-	private Button cancelButton;
-	
-	@FXML
-	private Button saveButton;
-	
-	@FXML
-	private TextField numberText;
-	
-	@FXML
-	private TextField groceryItemText;
+<span class="nc" id="L10">public class GroceryItemInfoWindow {</span>
+    
+    @FXML
+    private Button cancelButton;
+    
+    @FXML
+    private Button saveButton;
+    
+    @FXML
+    private TextField numberText;
+    
+    @FXML
+    private TextField groceryItemText;
 
-	private GroceryItemManager groceryItemManager;
-	private GroceryItem groceryItem;
-	private HomeWindow homeWindow;
+    private GroceryItem selectedItem;
+    private HomeWindow homeWindow;
 
-<span class="nc" id="L30">	public GroceryItemInfoWindow() {</span>
-<span class="nc" id="L31">		this.groceryItem = new GroceryItem(&quot;&quot;);</span>
-<span class="nc" id="L32">	}</span>
-	
-	public void setHomeWindow(HomeWindow homeWindow) {
-<span class="nc" id="L35">		this.homeWindow = homeWindow;</span>
-<span class="nc" id="L36">	}</span>
-	
-	@FXML
-	void initialize() {
-<span class="nc" id="L40">		this.cancelButton.setOnAction(event -&gt; this.closeWindow());</span>
-<span class="nc" id="L41">		this.saveButton.setOnAction(event -&gt; this.saveCourse());</span>
-<span class="nc" id="L42">	}</span>
-	
-	
-	public void populateFields(GroceryItem groceryItem) {
-<span class="nc" id="L46">		this.groceryItem = groceryItem;</span>
-<span class="nc" id="L47">		this.groceryItemText.setText(groceryItem.getItem());</span>
-	//	this.numberText.setText(String.valueOf(course.getNumber()));
-<span class="nc" id="L49">	}</span>
-	
-	private void saveCourse() {
-<span class="nc" id="L52">		String item = this.groceryItemText.getText();</span>
-		int number;
-		try {
-<span class="nc" id="L55">			number = Integer.parseInt(this.numberText.getText());</span>
-<span class="nc" id="L56">		} catch (NumberFormatException e) {</span>
-<span class="nc" id="L57">			this.showError(&quot;Course number must be an integer.&quot;);</span>
-<span class="nc" id="L58">			return;</span>
-<span class="nc" id="L59">		}</span>
-	//	if (prefix == null || this.numberText.getText().isEmpty() ) {
-	//		this.showError(&quot;Prefix, Number, and Semester are required fields.&quot;);
-	//		return;
-	//	}
-<span class="nc" id="L64">		GroceryItem groceryItem = new GroceryItem(item); // add number</span>
-<span class="nc bnc" id="L65" title="All 2 branches missed.">		if (this.groceryItem == null) {</span>
-<span class="nc bnc" id="L66" title="All 2 branches missed.">			if (this.groceryItemManager.addItem(groceryItem)) {</span>
-<span class="nc" id="L67">				this.closeWindow();</span>
-<span class="nc" id="L68">				this.homeWindow.setGroceryItemManager(groceryItem);</span>
-<span class="nc" id="L69">				this.notifyHomeWindow();</span>
-			} else {
-<span class="nc" id="L71">				this.showError(&quot;Grocery Item already exists.&quot;);</span>
-			}
-		} else {
-<span class="nc" id="L74">			this.closeWindow();</span>
-<span class="nc" id="L75">			this.notifyHomeWindow();</span>
-		}
-<span class="nc" id="L77">	}</span>
-	
-	private void notifyHomeWindow() {
-<span class="nc bnc" id="L80" title="All 2 branches missed.">		if (this.homeWindow != null) {</span>
-<span class="nc" id="L81">			this.homeWindow.refreshGroceryItemList();</span>
-		}
-<span class="nc" id="L83">	}</span>
-	
-	private void closeWindow() {
-<span class="nc" id="L86">		Stage stage = (Stage) this.saveButton.getScene().getWindow();</span>
-<span class="nc" id="L87">		stage.close();</span>
-<span class="nc" id="L88">	}</span>
-	
-	private void showError(String message) {
-<span class="nc" id="L91">		Alert alert = new Alert(Alert.AlertType.ERROR);</span>
-<span class="nc" id="L92">		alert.setTitle(&quot;Error&quot;);</span>
-<span class="nc" id="L93">		alert.setHeaderText(null);</span>
-<span class="nc" id="L94">		alert.setContentText(message);</span>
-<span class="nc" id="L95">		alert.showAndWait();</span>
-<span class="nc" id="L96">	}</span>
+    public void setHomeWindow(HomeWindow homeWindow) {
+<span class="nc" id="L28">        this.homeWindow = homeWindow;</span>
+<span class="nc" id="L29">    }</span>
+
+    @FXML
+    void initialize() {
+<span class="nc" id="L33">        this.cancelButton.setOnAction(event -&gt; this.closeWindow());</span>
+<span class="nc" id="L34">        this.saveButton.setOnAction(event -&gt; this.saveCourse());</span>
+<span class="nc" id="L35">    }</span>
+
+    public void populateFields(GroceryItem groceryItem) {
+<span class="nc" id="L38">        this.selectedItem = groceryItem;</span>
+<span class="nc" id="L39">        this.groceryItemText.setText(groceryItem.getItem());</span>
+<span class="nc" id="L40">        this.numberText.setText(String.valueOf(groceryItem.getNumber()));</span>
+<span class="nc" id="L41">    }</span>
+
+    private void saveCourse() {
+<span class="nc" id="L44">        String item = this.groceryItemText.getText();</span>
+        int number;
+        try {
+<span class="nc" id="L47">            number = Integer.parseInt(this.numberText.getText());</span>
+<span class="nc" id="L48">        } catch (NumberFormatException e) {</span>
+<span class="nc" id="L49">            this.showError(&quot;Course number must be an integer.&quot;);</span>
+<span class="nc" id="L50">            return;</span>
+<span class="nc" id="L51">        }</span>
+<span class="nc bnc" id="L52" title="All 4 branches missed.">        if (item.isEmpty() || this.numberText.getText().isEmpty()) {</span>
+<span class="nc" id="L53">            this.showError(&quot;Item Name and Quantity are required fields.&quot;);</span>
+<span class="nc" id="L54">            return;</span>
+        }
+<span class="nc" id="L56">        GroceryItem groceryItem = new GroceryItem(item, number);</span>
+
+<span class="nc bnc" id="L58" title="All 2 branches missed.">        if (this.selectedItem == null) {</span>
+<span class="nc" id="L59">            this.homeWindow.setGroceryItemManager(groceryItem);</span>
+        } else {
+<span class="nc" id="L61">            this.homeWindow.removeItem(this.selectedItem);</span>
+<span class="nc" id="L62">            this.homeWindow.setGroceryItemManager(groceryItem);</span>
+        }
+<span class="nc" id="L64">        this.closeWindow();</span>
+<span class="nc" id="L65">        this.notifyHomeWindow();</span>
+<span class="nc" id="L66">    }</span>
+
+    private void notifyHomeWindow() {
+<span class="nc bnc" id="L69" title="All 2 branches missed.">        if (this.homeWindow != null) {</span>
+<span class="nc" id="L70">            this.homeWindow.refreshGroceryItemList();</span>
+        }
+<span class="nc" id="L72">    }</span>
+
+    private void closeWindow() {
+<span class="nc" id="L75">        Stage stage = (Stage) this.saveButton.getScene().getWindow();</span>
+<span class="nc" id="L76">        stage.close();</span>
+<span class="nc" id="L77">    }</span>
+
+    private void showError(String message) {
+<span class="nc" id="L80">        Alert alert = new Alert(Alert.AlertType.ERROR);</span>
+<span class="nc" id="L81">        alert.setTitle(&quot;Error&quot;);</span>
+<span class="nc" id="L82">        alert.setHeaderText(null);</span>
+<span class="nc" id="L83">        alert.setContentText(message);</span>
+<span class="nc" id="L84">        alert.showAndWait();</span>
+<span class="nc" id="L85">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

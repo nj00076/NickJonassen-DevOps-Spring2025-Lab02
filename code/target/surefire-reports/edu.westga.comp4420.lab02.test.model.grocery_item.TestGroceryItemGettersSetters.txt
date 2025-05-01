@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: edu.westga.comp4420.lab02.test.model.grocery_item.TestGroceryItemGettersSetters
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.061 s - in edu.westga.comp4420.lab02.test.model.grocery_item.TestGroceryItemGettersSetters
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.06 s - in edu.westga.comp4420.lab02.test.model.grocery_item.TestGroceryItemGettersSetters
