@@ -53,6 +53,10 @@ public class GroceryItemInfoWindow {
             this.showError("Item Name and Quantity are required fields.");
             return;
         }
+		if (Integer.valueOf(this.numberText.getText()) < 0) {
+            this.showError("Quantity cannot be negative.");
+            return;
+        }
         GroceryItem groceryItem = new GroceryItem(item, number);
 
         if (this.selectedItem == null) {
@@ -66,9 +70,7 @@ public class GroceryItemInfoWindow {
     }
 
     private void notifyHomeWindow() {
-        if (this.homeWindow != null) {
-            this.homeWindow.refreshGroceryItemList();
-        }
+        this.homeWindow.refreshGroceryItemList();
     }
 
     private void closeWindow() {

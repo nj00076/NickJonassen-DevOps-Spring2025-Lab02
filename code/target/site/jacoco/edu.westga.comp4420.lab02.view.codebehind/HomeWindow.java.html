@@ -28,96 +28,96 @@ public class HomeWindow {
 	
 	private GroceryItemManager groceryItemManager;
 	
-<span class="nc" id="L31">	public HomeWindow() {</span>
-<span class="nc" id="L32">		this.groceryItemManager = new GroceryItemManager();</span>
-<span class="nc" id="L33">	}</span>
+<span class="fc" id="L31">	public HomeWindow() {</span>
+<span class="fc" id="L32">		this.groceryItemManager = new GroceryItemManager();</span>
+<span class="fc" id="L33">	}</span>
 
 	
 	public void setGroceryItemManager(GroceryItem groceryItem) {
-<span class="nc" id="L37">		this.groceryItemManager.addItem(groceryItem);</span>
-<span class="nc" id="L38">	}</span>
+<span class="fc" id="L37">		this.groceryItemManager.addItem(groceryItem);</span>
+<span class="fc" id="L38">	}</span>
 	
 	@FXML
 	public void initialize() {
-<span class="nc" id="L42">		this.refreshGroceryItemList();</span>
-<span class="nc" id="L43">		this.addButton.setOnAction(event -&gt; {</span>
+<span class="fc" id="L42">		this.refreshGroceryItemList();</span>
+<span class="fc" id="L43">		this.addButton.setOnAction(event -&gt; {</span>
 			try {
-<span class="nc" id="L45">				FXMLLoader loader = new FXMLLoader(getClass().getResource(&quot;/edu/westga/comp4420/lab02/view/codebehind/GroceryItemInfoWindow.fxml&quot;));</span>
-<span class="nc" id="L46">				Parent root = loader.load();</span>
-<span class="nc" id="L47">				GroceryItemInfoWindow groceryItemInfoWindow = loader.getController();</span>
-<span class="nc" id="L48">				groceryItemInfoWindow.setHomeWindow(this);</span>
-<span class="nc" id="L49">				Stage stage = new Stage();</span>
-<span class="nc" id="L50">				stage.setTitle(&quot;Grocery Manager&quot;);</span>
-<span class="nc" id="L51">				stage.setScene(new Scene(root));</span>
-<span class="nc" id="L52">				stage.show();</span>
-<span class="nc" id="L53">				stage.setOnHiding(e -&gt; this.refreshGroceryItemList());</span>
+<span class="fc" id="L45">				FXMLLoader loader = new FXMLLoader(getClass().getResource(&quot;/edu/westga/comp4420/lab02/view/codebehind/GroceryItemInfoWindow.fxml&quot;));</span>
+<span class="fc" id="L46">				Parent root = loader.load();</span>
+<span class="fc" id="L47">				GroceryItemInfoWindow groceryItemInfoWindow = loader.getController();</span>
+<span class="fc" id="L48">				groceryItemInfoWindow.setHomeWindow(this);</span>
+<span class="fc" id="L49">				Stage stage = new Stage();</span>
+<span class="fc" id="L50">				stage.setTitle(&quot;Grocery Manager&quot;);</span>
+<span class="fc" id="L51">				stage.setScene(new Scene(root));</span>
+<span class="fc" id="L52">				stage.show();</span>
+<span class="fc" id="L53">				stage.setOnHiding(e -&gt; this.refreshGroceryItemList());</span>
 <span class="nc" id="L54">			} catch (Exception e) {</span>
 <span class="nc" id="L55">				e.printStackTrace();</span>
 <span class="nc" id="L56">				this.showError(&quot;Error opening Grocery Item Information Window&quot;);</span>
-<span class="nc" id="L57">			}</span>
-<span class="nc" id="L58">		});</span>
-<span class="nc" id="L59">		this.initializeUpdate();</span>
-<span class="nc" id="L60">		this.initializeRemove();</span>
-<span class="nc" id="L61">	}</span>
+<span class="fc" id="L57">			}</span>
+<span class="fc" id="L58">		});</span>
+<span class="fc" id="L59">		this.initializeUpdate();</span>
+<span class="fc" id="L60">		this.initializeRemove();</span>
+<span class="fc" id="L61">	}</span>
 	
 	private void initializeRemove() {
-<span class="nc" id="L64">		this.removeButton.setOnAction(event -&gt; {</span>
-<span class="nc" id="L65">			GroceryItem selectedItem = this.groceryItemList.getSelectionModel().getSelectedItem();</span>
-<span class="nc bnc" id="L66" title="All 2 branches missed.">			if (selectedItem != null) {</span>
+<span class="fc" id="L64">		this.removeButton.setOnAction(event -&gt; {</span>
+<span class="fc" id="L65">			GroceryItem selectedItem = this.groceryItemList.getSelectionModel().getSelectedItem();</span>
+<span class="fc bfc" id="L66" title="All 2 branches covered.">			if (selectedItem != null) {</span>
 				try {
-<span class="nc" id="L68">					this.groceryItemManager.remove(selectedItem);</span>
-<span class="nc" id="L69">					this.refreshGroceryItemList();</span>
+<span class="fc" id="L68">					this.groceryItemManager.remove(selectedItem);</span>
+<span class="fc" id="L69">					this.refreshGroceryItemList();</span>
 <span class="nc" id="L70">				} catch (Exception e) {</span>
 <span class="nc" id="L71">					e.printStackTrace();</span>
 <span class="nc" id="L72">					this.showError(&quot;Error opening Grocery Item Information Window&quot;);</span>
-<span class="nc" id="L73">				}</span>
+<span class="pc" id="L73">				}</span>
 			} else {
-<span class="nc" id="L75">				this.showError(&quot;Please select a Grocery Item to remove&quot;);</span>
+<span class="fc" id="L75">				this.showError(&quot;Please select a Grocery Item to remove&quot;);</span>
 			}
-<span class="nc" id="L77">		});</span>
-<span class="nc" id="L78">	}</span>
+<span class="fc" id="L77">		});</span>
+<span class="fc" id="L78">	}</span>
 	
 	private void initializeUpdate() {
-<span class="nc" id="L81">		this.updateButton.setOnAction(event -&gt; {</span>
-<span class="nc" id="L82">			GroceryItem selectedItem = this.groceryItemList.getSelectionModel().getSelectedItem();</span>
-<span class="nc bnc" id="L83" title="All 2 branches missed.">			if (selectedItem != null) {</span>
+<span class="fc" id="L81">		this.updateButton.setOnAction(event -&gt; {</span>
+<span class="fc" id="L82">			GroceryItem selectedItem = this.groceryItemList.getSelectionModel().getSelectedItem();</span>
+<span class="fc bfc" id="L83" title="All 2 branches covered.">			if (selectedItem != null) {</span>
 				try {
-<span class="nc" id="L85">					FXMLLoader loader = new FXMLLoader(getClass().getResource(&quot;/edu/westga/comp4420/lab02/view/codebehind/GroceryItemInfoWindow.fxml&quot;));</span>
-<span class="nc" id="L86">					Parent root = loader.load();</span>
-<span class="nc" id="L87">					GroceryItemInfoWindow groceryItemInfoWindow = loader.getController();</span>
-<span class="nc" id="L88">					groceryItemInfoWindow.setHomeWindow(this);</span>
-<span class="nc" id="L89">					groceryItemInfoWindow.populateFields(selectedItem);</span>
-<span class="nc" id="L90">					Stage stage = new Stage();</span>
-<span class="nc" id="L91">					stage.setTitle(&quot;Update Item&quot;);</span>
-<span class="nc" id="L92">					stage.setScene(new Scene(root));</span>
-<span class="nc" id="L93">					stage.show();</span>
-<span class="nc" id="L94">					stage.setOnHiding(e -&gt; this.refreshGroceryItemList());</span>
+<span class="fc" id="L85">					FXMLLoader loader = new FXMLLoader(getClass().getResource(&quot;/edu/westga/comp4420/lab02/view/codebehind/GroceryItemInfoWindow.fxml&quot;));</span>
+<span class="fc" id="L86">					Parent root = loader.load();</span>
+<span class="fc" id="L87">					GroceryItemInfoWindow groceryItemInfoWindow = loader.getController();</span>
+<span class="fc" id="L88">					groceryItemInfoWindow.setHomeWindow(this);</span>
+<span class="fc" id="L89">					groceryItemInfoWindow.populateFields(selectedItem);</span>
+<span class="fc" id="L90">					Stage stage = new Stage();</span>
+<span class="fc" id="L91">					stage.setTitle(&quot;Update Item&quot;);</span>
+<span class="fc" id="L92">					stage.setScene(new Scene(root));</span>
+<span class="fc" id="L93">					stage.show();</span>
+<span class="fc" id="L94">					stage.setOnHiding(e -&gt; this.refreshGroceryItemList());</span>
 <span class="nc" id="L95">				} catch (Exception e) {</span>
 <span class="nc" id="L96">					e.printStackTrace();</span>
 <span class="nc" id="L97">					this.showError(&quot;Error opening Grocery Item Information Window&quot;);</span>
-<span class="nc" id="L98">				}</span>
+<span class="pc" id="L98">				}</span>
 			} else {
-<span class="nc" id="L100">				this.showError(&quot;Please select a Grocery Item to update&quot;);</span>
+<span class="fc" id="L100">				this.showError(&quot;Please select a Grocery Item to update&quot;);</span>
 			}
-<span class="nc" id="L102">		});</span>
-<span class="nc" id="L103">	}</span>
+<span class="fc" id="L102">		});</span>
+<span class="fc" id="L103">	}</span>
 	
 	public void refreshGroceryItemList() {
-<span class="nc" id="L106">		this.groceryItemList.getItems().clear();</span>
-<span class="nc" id="L107">		this.groceryItemList.getItems().addAll(this.groceryItemManager.getGroceryItems());</span>
-<span class="nc" id="L108">	}</span>
+<span class="fc" id="L106">		this.groceryItemList.getItems().clear();</span>
+<span class="fc" id="L107">		this.groceryItemList.getItems().addAll(this.groceryItemManager.getGroceryItems());</span>
+<span class="fc" id="L108">	}</span>
 	
 	private void showError(String message) {
-<span class="nc" id="L111">		Alert alert = new Alert(Alert.AlertType.ERROR);</span>
-<span class="nc" id="L112">		alert.setTitle(&quot;Error&quot;);</span>
-<span class="nc" id="L113">		alert.setHeaderText(null);</span>
-<span class="nc" id="L114">		alert.setContentText(message);</span>
-<span class="nc" id="L115">		alert.showAndWait();</span>
-<span class="nc" id="L116">	}</span>
+<span class="fc" id="L111">		Alert alert = new Alert(Alert.AlertType.ERROR);</span>
+<span class="fc" id="L112">		alert.setTitle(&quot;Error&quot;);</span>
+<span class="fc" id="L113">		alert.setHeaderText(null);</span>
+<span class="fc" id="L114">		alert.setContentText(message);</span>
+<span class="fc" id="L115">		alert.showAndWait();</span>
+<span class="fc" id="L116">	}</span>
 	
 	public void removeItem(GroceryItem item) {
-<span class="nc" id="L119">		this.groceryItemManager.remove(item);</span>
-<span class="nc" id="L120">	}</span>
+<span class="fc" id="L119">		this.groceryItemManager.remove(item);</span>
+<span class="fc" id="L120">	}</span>
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

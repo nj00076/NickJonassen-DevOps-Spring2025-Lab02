@@ -1,5 +1,9 @@
 edu\westga\comp4420\lab02\test\model\grocery_item\TestToString.class
 edu\westga\comp4420\lab02\test\model\grocery_item_manager\TestRemoveCourse.class
-edu\westga\comp4420\lab02\test\model\grocery_item\TestGroceryItemGettersSetters.class
+edu\westga\comp4420\lab02\test\view\main_window\TestAddingItemsGui.class
+edu\westga\comp4420\lab02\test\view\main_window\TestRemoveFromHomeWindow.class
 edu\westga\comp4420\lab02\test\model\grocery_item_manager\TestCourseManagerGetters.class
+edu\westga\comp4420\lab02\test\view\main_window\TestAddingItemsGui$1.class
+edu\westga\comp4420\lab02\test\view\main_window\TestUpdateItem.class
+edu\westga\comp4420\lab02\test\model\grocery_item\TestGroceryItemGettersSetters.class
 edu\westga\comp4420\lab02\test\model\grocery_item_manager\TestAddCourse.class
