@@ -1,7 +1,5 @@
 package edu.westga.comp4420.lab02.model;
 
-// import java.util.Objects;
-
 public class GroceryItem {
     private String item;
 	private int number;
