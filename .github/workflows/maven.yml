@@ -10,9 +10,9 @@ name: Java CI with Maven
 
 on:
   push:
-    branches: [ "main" , "development"]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "main" , "development"]
+    branches: [ "main" ]
 
 jobs:
   verify:
@@ -29,7 +29,7 @@ jobs:
         cache: maven
     - name: Verify with Maven
       run: |
-      echo TESTING Grocery List Manager
-      cd 'code/NickJonassen-DevOps-Spring2025-Lab02'
-      mvn --batch-mode --update-snapshots clean verify
-      cd../..|
+        echo TESTING JUnit Sample Project
+        cd 'code/JUnit Sample'
+        mvn --batch-mode --update-snapshots clean verify
+        cd ../..
