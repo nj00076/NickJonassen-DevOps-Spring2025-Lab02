@@ -15,7 +15,7 @@ import javafx.scene.Scene;
  * @version Spring 2025
  */
 public class Main extends Application {
-	public static final String HOME_TITLE = "Home Page";
+	public static final String HOME_TITLE = "Home Page - Nick Jonassen";
 	public static final String GUI_RESOURCE = "view/codebehind/HomeWindow.fxml";
 	public static final String INFO_TITLE = "Grocery Item Information";
 	public static final String INFO_RESOURCE = "view/codebehind/GroceryItemInfoWindow.fxml"; 
