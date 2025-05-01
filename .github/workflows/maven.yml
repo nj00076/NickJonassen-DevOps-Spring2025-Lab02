@@ -30,6 +30,6 @@ jobs:
     - name: Verify with Maven
       run: |
         echo TESTING Grocery List Manager
-        cd 'code/NickJonassen-DevOps-Spring2025-Lab02'
+        cd 'code'
         mvn --batch-mode --update-snapshots clean verify
         cd ../..
