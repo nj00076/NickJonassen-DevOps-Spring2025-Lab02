@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: edu.westga.comp4420.lab02.test.view.main_window.TestUpdateItem
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.684 s - in edu.westga.comp4420.lab02.test.view.main_window.TestUpdateItem
